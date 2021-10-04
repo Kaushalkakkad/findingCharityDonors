@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div style="color:blue">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2>Predictive analysis</h2>
+            <h3>Age</h3>
+            <input id="first" name="age" type="number">
+            <h3>Education</h3><br><select name="edunum" id="edunum" required="required">
+                <option value="10th">10th</option>
+                <option value="12th">12th</option>
+                <option value="Bachelors">Bachelors</option>
+            </select>
+            <h3>Marital Status</h3><br><select name="status" id="status" required="required">
+                <option value="Married_spouse">Married_spouse</option>
+                <option value="Married">Married</option>
+            </select>
+            <h3>Work Class</h3><br><select name="workclass" id="workclass" required="required">
+                <option value="Federal-gov">Federal-gov</option>
+                <option value="Private">Private</option>
+                <option value="self-emp">self-emp</option>
+            </select>
+            <h3>Capital Gain</h3><input id="gain" name="gain" required="required">
+            <h3>Capital loss</h3><input id="loss" name="loss" required="required">
+            <h3>hours per week</h3><input id="hours" name="hours" required="required">
+            <h3>Gender</h3><br><select name="gender" id="gender" required="required">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            <h3>Native Country</h3><br><select name="contry" id="contry" required="required">
+                <option value="eng">eng</option>
+                <option value="US">US</option>
+                <option value="india">india</option>
+            </select>
+            <br><br><button id="sub" type="submit ">Predict</button>
+            <br>
+
+
+
+
+        </form>
+
+
+
+        <br><br><h3>{{ prediction_text }}</h3>
+    </div>
+
+
+
+
+    <style>
+        body {
+            background-color: lightslategray;
+            text-align: center;
+            padding: 0px;
+        }
+
+        #age{
+            font-size: 18px;
+            width: 100px;
+            height: 23px;
+            top: 23px;
+        }
+
+        #box {
+            border-radius: 60px;
+            border-color: black;
+            border-style: solid;
+            font-family: cursive;
+            text-align: center;
+            background-color: rgb(168, 131, 61);
+            font-size: medium;
+            position: absolute;
+            width: 700px;
+            bottom: 9%;
+            height: 850px;
+            right: 30%;
+            padding: 0px;
+            margin: 0px;
+            font-size: 14px;
+        }
+
+        #edunum {
+            width: 83px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 20px;
+        }
+
+        #edunum:hover {
+            background-color: coral;
+        }
+
+        #workclass {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+
+        #workclass:hover {
+            background-color: coral;
+        }
+
+        #gender {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+
+        #gender:hover {
+            background-color: coral;
+        }
+
+        #capital-gain {
+            width: 120px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+
+        #capital-gain:hover {
+            background-color: darkcyan;
+        }
+
+        #capital-loss {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #country {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #status {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+    </style>
+</body>
+
+</html>
